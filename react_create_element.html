@@ -1,0 +1,38 @@
+<body>
+    <div id = 'parent'></div>
+    <!-- The below two script tags are used for creating the react elements -->
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script type="text/javascript">
+        const parentElement = document.getElementById('parent')
+        const childElement = React.createElement('div',{
+            children:" I'm a react element",
+            className: 'container'
+        })
+        ReactDOM.render(childElement,parentElement)
+    </script>
+</body>
+
+
+
+<!-- React createElement syntax:
+    -the first arugent of the createElement is the 'tagName' followed by the tag properties
+    -The tag properties are specied in the form of object. 
+    -The text property is passed in the key called as "children" 
+    -The childre key can also have an element created inside it.
+    -The child property can also have multiple childrens specified in the form of an array
+
+    example:{
+        children: ["i'm","a","react","element"]
+        }
+    example:{
+        children: React.createElement('span',null,"I'm","a","react","element")
+        }
+        example:{
+        children: React.createElement('span',{
+            className:'debug',
+            children: 'lololol'
+        },'another','one')
+        }
+    
+    -->

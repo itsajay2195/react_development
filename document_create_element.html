@@ -1,0 +1,11 @@
+<body>
+    <div id="parent"></div>
+    <script type="text/javascript">
+      const rootElement = document.getElementById('parent')
+      const element = document.createElement('div') // creating a child element which will be placed inside the parent 
+      element.textContent = 'Hello World' // adding properties to the child element
+      element.className = 'container' 
+      rootElement.appendChild(element) // appending the child child element to the root element
+    </script>
+  </body>
+  
