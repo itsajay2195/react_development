@@ -1,0 +1,22 @@
+<body>
+    <div id='parent'></div>
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type = 'text/babel'>
+        const Message = (props)=> <div className="Message">{props.children}</div>
+        const parentElement = document.getElementById('parent')
+        const element = (
+            <div>
+                <Message>AjayKumar
+                    <Message children="Rajasekaran"/>
+                    <span>Thanks</span>
+                </Message>
+                
+               
+            </div>
+        )
+        ReactDOM.render(element,parentElement)
+    </script>
+
+</body>

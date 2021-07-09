@@ -1,0 +1,34 @@
+<body>
+    <div id="parent"></div>
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+        const parentElement = document.getElementById('parent')
+        const element =(
+            <>
+                <span>Hello </span> 
+                <span>World</span> 
+            </>
+        )
+       
+    
+        ReactDOM.render(element,parentElement)
+
+    </script>
+    
+</body>
+
+
+<!-- 
+    -Fragments are basically used render elements side by side
+    -React frangments are created by const element= <React.Fragments>
+        <span>Helllo</span>
+        <span>world</span>
+    )
+    js code for the same is:
+    const ele = React.createElement(React.Fragement,null, React.createElement("span",null,"hello"),React.createElement("span",null,"world"))
+
+    -the special syntax for react fragment is represented within <> </>
+    
+ -->

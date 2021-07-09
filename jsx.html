@@ -3,9 +3,10 @@
     <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
-    <script type="text/babel">
+    <script type="text/babel"> //babel is compiler, which will basically compile the jsx into a browser readble one, type babel will look for all script in that type
         const parentElement = document.getElementById('parent')
-        const element = <div> Hello World </div>
+        const props = {children:"It's me the JSX", className: 'container'}
+        const element = <div {...props}> my name is Ajay</div>
         ReactDOM.render(element,parentElement)
     </script>
 
