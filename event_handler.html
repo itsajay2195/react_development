@@ -1,0 +1,40 @@
+<body>
+    <div id='parent'></div>
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <style></style>
+    <script type="text/babel">
+        const state = {"count":0,"inpuText":''}
+        function App (){
+            function isClicked(){
+            setState({"count":state.count + 1})
+        }
+        function onTyped(event){
+            setState({"inpuText":event.target.value})
+        }
+        return(
+            <div>
+            <div> The button is clicked for {state.count} times </div>
+            <button onClick={isClicked}>Click Me</button>
+            <div>Kindly type the text on the input field</div>
+            <input onChange={onTyped}></input>
+            <p>You typed: {state.inpuText}</p>
+            </div>
+        )
+        }
+        
+        
+
+        function setState(newState) {
+        Object.assign(state, newState)
+        renderApp()
+        }
+
+        function renderApp() {
+            ReactDOM.render(<App/>,document.getElementById('parent'))
+        }
+
+        renderApp()
+    </script>
+</body>

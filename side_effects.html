@@ -1,0 +1,27 @@
+<body>
+    <div id='parent'></div>
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+    function App(){
+        const [name,setName]= React.useState(window.localStorage.getItem('name') || '')
+        const handleChange =(event)=>{
+            setName(event.target.value)
+        }
+        React.useEffect(() => {
+            window.localStorage.setItem('name',name)
+           
+        }, )
+        return(
+            <div>
+            <label>Name:</label><br/>
+            <input value = {name} onChange={handleChange}/>
+            <p/>
+            {name ? <strong>Hello {name}</strong>: 'Please enter your name'}
+            </div>
+        )
+    }
+    ReactDOM.render(<App/>,document.getElementById('parent'))
+    </script>
+</body>
